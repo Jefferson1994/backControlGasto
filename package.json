@@ -2,10 +2,10 @@
   "name": "repo-interview",
   "version": "1.0.0",
   "description": "Repository",
-  "main": "dist/main.js",
+  "main": "src/main.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/main.js",
+    "start": "node src/main.js",
     "start:dev": "tsnd  --respawn --clear --transpile-only ./src/main.ts"
   },
   "author": "...",
