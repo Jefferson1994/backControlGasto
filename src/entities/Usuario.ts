@@ -9,17 +9,17 @@ import { Gasto } from './Gasto';
 @Entity()
 export class Usuario {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column({ unique: true })
-  email: string;
+  email!: string;
 
   @Column()
-  nombre: string;
+  nombre!: string;
 
   @Column()
-  password: string;
+  password!: string;
 
   @OneToMany(() => Gasto, (gasto) => gasto.usuario)
-  gastos: Gasto[];
+  gastos!: Gasto[];
 }
