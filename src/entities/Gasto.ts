@@ -12,41 +12,41 @@ import { CategoriaGasto } from './CategoriaGasto';
 @Entity()
 export class Gasto {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column("decimal", { precision: 10, scale: 2 })
-  monto: number;
+  monto!: number;
 
 
   @Column()
-  descripcion: string;
+  descripcion!: string;
 
   @Column()
-  fecha: Date;
+  fecha!: Date;
 
   // Columnas FK explícitas
   @Column()
-  usuarioId: number;
+  usuarioId!: number;
 
   @Column()
-  tipoId: number;
+  tipoId!: number;
 
   @Column()
-  categoriaId: number;
+  categoriaId!: number;
 
   @Column({ default: true })
-  activo: boolean;
+  activo!: boolean;
 
   // Relaciones
   @ManyToOne(() => Usuario, (usuario) => usuario.gastos)
   @JoinColumn({ name: "usuarioId" })  // indica la columna FK que usa esta relación
-  usuario: Usuario;
+  usuario!: Usuario;
 
   @ManyToOne(() => TipoGasto, (tipo) => tipo.gastos)
   @JoinColumn({ name: "tipoId" })
-  tipo: TipoGasto;
+  tipo!: TipoGasto;
 
   @ManyToOne(() => CategoriaGasto, (categoria) => categoria.gastos)
   @JoinColumn({ name: "categoriaId" })
-  categoria: CategoriaGasto;
+  categoria!: CategoriaGasto;
 }
