@@ -12,17 +12,17 @@ import { TipoGasto } from './TipoGasto';
 @Entity()
 export class CategoriaGasto {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  nombre: string;
+  nombre!: string;
 
   @Column({ default: true })
-  activo: boolean;
+  activo!: boolean;
 
   @ManyToOne(() => TipoGasto, tipo => tipo.categorias)
-  tipo: TipoGasto;
+  tipo!: TipoGasto;
 
   @OneToMany(() => Gasto, (gasto) => gasto.categoria)
-  gastos: Gasto[];
+  gastos!: Gasto[];
 }
