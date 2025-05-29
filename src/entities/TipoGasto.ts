@@ -10,17 +10,17 @@ import { CategoriaGasto } from './CategoriaGasto';
 @Entity()
 export class TipoGasto {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  nombre: string; // Ingreso o Egreso
+  nombre!: string; // Ingreso o Egreso
 
   @Column({ default: true })
-  activo: boolean;
+  activo!: boolean;
 
   @OneToMany(() => Gasto, (gasto) => gasto.tipo)
-  gastos: Gasto[];
+  gastos!: Gasto[];
 
   @OneToMany(() => CategoriaGasto, (categoria) => categoria.tipo)
-  categorias: CategoriaGasto[];  // <-- Esta línea se agrega para relación con Categorias
+  categorias!: CategoriaGasto[];  // <-- Esta línea se agrega para relación con Categorias
 }
